@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Product Id="*" Name="Saldy's missions" Language="1033" Version="1.2.1.0" Manufacturer="Saldy" Codepage="1252"
+             UpgradeCode="4d89f5e7-85e0-4ba1-93b3-263a91c38efb">
+        <Package InstallerVersion="301" Compressed="yes" InstallScope="perMachine" Platform="x86"/>
+        <!--Properties-->
+        <Property Id="BUILD" Value="$(var.Configuration)" />
+        <Property Id="MSIDEPLOYMENTCOMPLIANT" Value="1" />
+        <Property Id="ARPNOREPAIR" Value="1" />
+        <Property Id="ARPNOMODIFY" Value="1" />
+        <Property Id="ARPCOMMENTS" Value="rudidlo" />
+        <Property Id="GAMEINSTALLATIONPATH" Secure="yes">
+            <RegistrySearch Id="gameInstallationPath" Root="HKLM" Key="SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{66F649A9-0FA2-487E-BC0D-894BD7E89D5E}_is1" Name="InstallLocation" Type="raw" />
+        </Property>
+
+        <Property Id="FILEEXISTS">
+            <DirectorySearch Id="CheckFileDir" Path="[GAMEINSTALLATIONPATH]" Depth="2" AssignToProperty="yes">
+                <FileSearch Id="CheckFile" Name="Il-2.exe" />
+            </DirectorySearch>
+        </Property>
+
+        <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+
+        <MediaTemplate EmbedCab="yes" CompressionLevel="high" />
+    
+
+
+    <!--Upgrades-->
+    <Upgrade Id="E546F888-2D97-4F09-817B-0EEF2799BCE3">
+        <!-- Detect older product versions -->
+        <UpgradeVersion OnlyDetect="no" Language="1033" Property="PREVIOUSVERSIONSINSTALLED" Minimum="1.0.0"
+                        IncludeMinimum="yes" Maximum="1.2.1"
+                        IncludeMaximum="no" MigrateFeatures="yes" />
+        <!-- Detect newer product versions -->
+        <UpgradeVersion OnlyDetect="yes" IncludeMinimum="yes"
+                        Minimum="1.2.1" Language="1033"
+                        Property="NEWERVERSIONDETECTED" MigrateFeatures="yes" />
+        <UpgradeVersion OnlyDetect="yes" Minimum="1.2.1"
+                        IncludeMinimum="yes" Language="1033"
+                        Maximum="1.2.1" IncludeMaximum="yes"
+                        Property="SELFFOUND" MigrateFeatures="yes" />
+    </Upgrade>
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+        <Directory Id="GAMEINSTALLATIONPATH">
+            <Directory Id="data" Name="data">
+                <Directory Id="campaigns" Name="campaigns">
+                    <Directory Id="operationBuffelDirectory" Name="OperationBüffel" />
+                </Directory>
+            </Directory>
+        </Directory>
+    </Directory>
+
+    <ComponentGroup Id="cgBuffel" Directory="operationBuffelDirectory">
+        <Component Id="c1DFAD04AB97C4B1DBB78502BCA5F8B32" Guid="2CF19F38-BED5-4656-9641-A8A82540632E">
+            <File Id="FILE.operationBuffelDirectory.01.chs" KeyPath="yes"
+                  Source=".\OperationBüffel\01.chs" />
+        </Component>
+        <Component Id="c0CED3EAD81AA41218FD3EA30F0547D40" Guid="C10EE4B7-1B12-4720-AE0A-D544E53CD159">
+            <File Id="FILE.operationBuffelDirectory.01.eng" KeyPath="yes"
+                  Source=".\OperationBüffel\01.eng" />
+        </Component>
+        <Component Id="cE54897E21C474F5B82574745921485A2" Guid="313FCE484B1C4D409D9F10B77C412A70">
+            <File Id="FILE.operationBuffelDirectory.01.fra" KeyPath="yes"
+                  Source=".\OperationBüffel\01.fra" />
+        </Component>
+        <Component Id="c0c71b432b60040b781080f49757ab65a" Guid="70ac80ee-275a-4045-9418-b6ff0e7df979">
+            <File Id="FILE.operationBuffelDirectory.01.ger" KeyPath="yes"
+                  Source=".\OperationBüffel\01.ger" />
+        </Component>
+        <Component Id="c842893ddbfbc4e2e853f57d6e94dc3be" Guid="1369afe8-440b-4510-ada7-74767d20772a">
+            <File Id="FILE.operationBuffelDirectory.01.list" KeyPath="yes"
+                  Source=".\OperationBüffel\01.list" />
+        </Component>
+        <Component Id="c824e52db790c42c696268d3a6c59739e" Guid="42051cfe-091b-482e-87b6-6492e84c0d6a">
+            <File Id="FILE.operationBuffelDirectory.01.msnbin" KeyPath="yes"
+                  Source=".\OperationBüffel\01.msnbin" />
+        </Component>
+        <Component Id="c4c3f658c97aa4a40955424147b11e8b8" Guid="6f843716-2e67-4644-8a3e-28ebcd7608f6">
+            <File Id="FILE.operationBuffelDirectory.01.png" KeyPath="yes"
+                  Source=".\OperationBüffel\01.png" />
+        </Component>
+        <Component Id="c45322836b45f4170b258ca18e0fe8a67" Guid="849613c1-b5b0-4832-b3b0-93ce46de9191">
+            <File Id="FILE.operationBuffelDirectory.01.pol" KeyPath="yes"
+                  Source=".\OperationBüffel\01.pol" />
+        </Component>
+        <Component Id="c7e6039288973432b80aedb6be70068df" Guid="f544dd0a-0bdc-46d6-82f6-f03bff9f5bd0">
+            <File Id="FILE.operationBuffelDirectory.01.rus" KeyPath="yes"
+                  Source=".\OperationBüffel\01.rus" />
+        </Component>
+        <Component Id="c7cefc40ebea54584a61c86bc9a77ffc9" Guid="b2e29306-d7b1-4906-a5a4-eb9130d4e9ce">
+            <File Id="FILE.operationBuffelDirectory.01.spa" KeyPath="yes"
+                  Source=".\OperationBüffel\01.spa" />
+        </Component>
+        <Component Id="c88fa029fb77f45dfbeaf47c8bcda553e" Guid="8ad93ab6-d22e-4c41-afaa-a8e7dda67fbf">
+            <File Id="FILE.operationBuffelDirectory.02.chs" KeyPath="yes"
+                  Source=".\OperationBüffel\02.chs" />
+        </Component>
+        <Component Id="cee2154a11083429f9a412a4b6c4667ae" Guid="c3062710-ecb4-40d0-861b-5488418f4862">
+            <File Id="FILE.operationBuffelDirectory.02.eng" KeyPath="yes"
+                  Source=".\OperationBüffel\02.eng" />
+        </Component>
+        <Component Id="cb4a39c36c6d9408dadd27a318f405070" Guid="b972e662-e711-42cd-8c2f-9fbc57221dfb">
+            <File Id="FILE.operationBuffelDirectory.02.fra" KeyPath="yes"
+                  Source=".\OperationBüffel\02.fra" />
+        </Component>
+        <Component Id="c12125f0dae794275a0a9c142261e6f2f" Guid="46f3fcac-5567-4867-be9a-18902479fe05">
+            <File Id="FILE.operationBuffelDirectory.02.ger" KeyPath="yes"
+                  Source=".\OperationBüffel\02.ger" />
+        </Component>
+        <Component Id="c21b28517a14c4342a5121e45c642458c" Guid="318caa36-77b1-47cf-a178-c294a5d6b860">
+            <File Id="FILE.operationBuffelDirectory.02.list" KeyPath="yes"
+                  Source=".\OperationBüffel\02.list" />
+        </Component>
+        <Component Id="cfaa91eed8bc44a3eb971f57a7316244d" Guid="cab102cb-6b9a-4d15-bf63-aa9bf239abfe">
+            <File Id="FILE.operationBuffelDirectory.02.Mission" KeyPath="yes"
+                  Source=".\OperationBüffel\02.Mission" />
+        </Component>
+        <Component Id="c237d8f9691e1478e8ba7af4990061135" Guid="59c7751e-1882-40fe-8369-df49afb27dc2">
+            <File Id="FILE.operationBuffelDirectory.02.msnbin" KeyPath="yes"
+                  Source=".\OperationBüffel\02.msnbin" />
+        </Component>
+        <Component Id="c4143481e8c2e4fb193d82f58e0d0ef74" Guid="0110d476-850c-4754-8195-16454f1e9170">
+            <File Id="FILE.operationBuffelDirectory.02.png" KeyPath="yes"
+                  Source=".\OperationBüffel\02.png" />
+        </Component>
+        <Component Id="c60a3ea567a124b36bae1e97bb812e0a4" Guid="9180e364-aeeb-4a54-b2b0-a4d8d379f348">
+            <File Id="FILE.operationBuffelDirectory.02.pol" KeyPath="yes"
+                  Source=".\OperationBüffel\02.pol" />
+        </Component>
+        <Component Id="c30e007c5435b4e95806617b8aacf4748" Guid="daedac54-f766-4e83-ac01-e273e231fd34">
+            <File Id="FILE.operationBuffelDirectory.02.rus" KeyPath="yes"
+                  Source=".\OperationBüffel\02.rus" />
+        </Component>
+        <Component Id="cb311c1698174457385c8c455c0917dae" Guid="8be960df-c6ae-4358-87b8-7fbfc0befb21">
+            <File Id="FILE.operationBuffelDirectory.02.spa" KeyPath="yes"
+                  Source=".\OperationBüffel\02.spa" />
+        </Component>
+        <Component Id="c236cdb8c407b4aa8bb2fac92bafc0abb" Guid="4bdb7c9a-531b-4ef8-bfb2-23d1ef66583c">
+            <File Id="FILE.operationBuffelDirectory.03.chs" KeyPath="yes"
+                  Source=".\OperationBüffel\03.chs" />
+        </Component>
+        <Component Id="ccd563ca27fc349f3b249e7bf3ff0fc4c" Guid="e7299335-05dc-4d58-ab58-696e82ed7cbd">
+            <File Id="FILE.operationBuffelDirectory.03.eng" KeyPath="yes"
+                  Source=".\OperationBüffel\03.eng" />
+        </Component>
+        <Component Id="c60a8745d707b4b5ba9c3c2d8d197ff64" Guid="0eaef38f-3e6d-45ee-aeab-2d4328af0636">
+            <File Id="FILE.operationBuffelDirectory.03.fra" KeyPath="yes"
+                  Source=".\OperationBüffel\03.fra" />
+        </Component>
+        <Component Id="c1ec1e0a4409e4afa8164af6a7f1286dc" Guid="e4857e5e-c0fa-42c9-b929-2d546d0f41af">
+            <File Id="FILE.operationBuffelDirectory.03.ger" KeyPath="yes"
+                  Source=".\OperationBüffel\03.ger" />
+        </Component>
+        <Component Id="c91a00df8b98244288e3442c728011488" Guid="fe1d5c8d-a334-40fb-b0f5-cf0bc0c32787">
+            <File Id="FILE.operationBuffelDirectory.03.list" KeyPath="yes"
+                  Source=".\OperationBüffel\03.list" />
+        </Component>
+        <Component Id="c14e08af4697c42b0946f0482e60c63ba" Guid="69e18aa2-766d-4f6d-ad92-bc577babd47c">
+            <File Id="FILE.operationBuffelDirectory.03.Mission" KeyPath="yes"
+                  Source=".\OperationBüffel\03.Mission" />
+        </Component>
+        <Component Id="c18853f03dc5d415dad7c1f1517654d01" Guid="fb1bffd6-c906-40b5-b703-dd32d9b2980a">
+            <File Id="FILE.operationBuffelDirectory.03.msnbin" KeyPath="yes"
+                  Source=".\OperationBüffel\03.msnbin" />
+        </Component>
+        <Component Id="ccc21885982a34401abea41bef29c2d78" Guid="84081435-3e9c-442e-9861-df7f3b40ade8">
+            <File Id="FILE.operationBuffelDirectory.03.png" KeyPath="yes"
+                  Source=".\OperationBüffel\03.png" />
+        </Component>
+        <Component Id="ca9bd3b9ed6714b2dbb7553df87c74d7a" Guid="3bd0e7a9-9a10-4aa1-b76a-c1f36b2a0d98">
+            <File Id="FILE.operationBuffelDirectory.03.pol" KeyPath="yes"
+                  Source=".\OperationBüffel\03.pol" />
+        </Component>
+        <Component Id="c9121ec8bae4540599504d2ca1d0bd508" Guid="88a97879-da20-46df-bb27-a59d7344d203">
+            <File Id="FILE.operationBuffelDirectory.03.rus" KeyPath="yes"
+                  Source=".\OperationBüffel\03.rus" />
+        </Component>
+        <Component Id="c9c078cfcc8bb449d9dd51d7a1f024641" Guid="c179c818-8fa9-4054-8d5d-fe12112a7912">
+            <File Id="FILE.operationBuffelDirectory.03.spa" KeyPath="yes"
+                  Source=".\OperationBüffel\03.spa" />
+        </Component>
+        <Component Id="c90a638e060364c82b84d52725867a1f5" Guid="87cef6d6-07a0-499e-b3b8-e0d542c714dc">
+            <File Id="FILE.operationBuffelDirectory.04.chs" KeyPath="yes"
+                  Source=".\OperationBüffel\04.chs" />
+        </Component>
+        <Component Id="ce3120687e81144b4bbc9a9dd90315a80" Guid="160c02ed-0e64-4713-9b0c-390793823d55">
+            <File Id="FILE.operationBuffelDirectory.04.eng" KeyPath="yes"
+                  Source=".\OperationBüffel\04.eng" />
+        </Component>
+        <Component Id="c07793e7fad2c4329adcdfeb58d4f3a90" Guid="0a5162dc-0520-4e7f-8c17-ebea3d8d0509">
+            <File Id="FILE.operationBuffelDirectory.04.fra" KeyPath="yes"
+                  Source=".\OperationBüffel\04.fra" />
+        </Component>
+        <Component Id="c61da65b6ae6344cbbe73f6dfbcd5283c" Guid="be9801d7-11b2-4546-9e45-b7cdd8aab8a8">
+            <File Id="FILE.operationBuffelDirectory.04.ger" KeyPath="yes"
+                  Source=".\OperationBüffel\04.ger" />
+        </Component>
+        <Component Id="cfaed09879fe94fc8b2a1713fbb0994bc" Guid="2665e66a-2910-4c50-bdf8-7dd973129acd">
+            <File Id="FILE.operationBuffelDirectory.04.list" KeyPath="yes"
+                  Source=".\OperationBüffel\04.list" />
+        </Component>
+        <Component Id="cd5201076ec3d4e18a539f046008dc95c" Guid="3cbd2725-142c-48aa-afa1-ca683378b099">
+            <File Id="FILE.operationBuffelDirectory.04.Mission" KeyPath="yes"
+                  Source=".\OperationBüffel\04.Mission" />
+        </Component>
+        <Component Id="c5cf695fa6168481c8b0f2449541ea4c2" Guid="7cd5cdf8-f8b3-424f-b315-c80b2dfe7b72">
+            <File Id="FILE.operationBuffelDirectory.04.msnbin" KeyPath="yes"
+                  Source=".\OperationBüffel\04.msnbin" />
+        </Component>
+        <Component Id="c84dfad06b3c64b9cb45120bac36edadb" Guid="0edba75b-aa9d-405f-b4e8-3db6af37bfd9">
+            <File Id="FILE.operationBuffelDirectory.04.png" KeyPath="yes"
+                  Source=".\OperationBüffel\04.png" />
+        </Component>
+        <Component Id="cff602398077f4c499c9ec99d2a8bd8a0" Guid="e1052d46-0452-48cc-9161-15f889b0cacf">
+            <File Id="FILE.operationBuffelDirectory.04.pol" KeyPath="yes"
+                  Source=".\OperationBüffel\04.pol" />
+        </Component>
+        <Component Id="c24b8a3ab22294797a45ee5a013e63343" Guid="5d04a0a6-0294-44c2-8cfc-9a8b2ff29ea9">
+            <File Id="FILE.operationBuffelDirectory.04.rus" KeyPath="yes"
+                  Source=".\OperationBüffel\04.rus" />
+        </Component>
+        <Component Id="c0b3fd3cf5c704f9f845c406cebc62622" Guid="d612e9d8-78ca-4b40-9de3-fc8525704ae3">
+            <File Id="FILE.operationBuffelDirectory.04.spa" KeyPath="yes"
+                  Source=".\OperationBüffel\04.spa" />
+        </Component>
+        <Component Id="ceca1b90b07b541268ca530e9ff5c6feb" Guid="e11c32b5-765f-458b-ba7d-783a047287a2">
+            <File Id="FILE.operationBuffelDirectory.05.chs" KeyPath="yes"
+                  Source=".\OperationBüffel\05.chs" />
+        </Component>
+        <Component Id="c4445762479954c538b11611ec659bcaf" Guid="3029fd1d-91fe-4185-9e4f-2bafc8aa8ff5">
+            <File Id="FILE.operationBuffelDirectory.05.eng" KeyPath="yes"
+                  Source=".\OperationBüffel\05.eng" />
+        </Component>
+        <Component Id="cc41785236001406eb2ba435941ccda2e" Guid="2052374e-691d-4567-9f34-409944fb2d6f">
+            <File Id="FILE.operationBuffelDirectory.05.fra" KeyPath="yes"
+                  Source=".\OperationBüffel\05.fra" />
+        </Component>
+        <Component Id="c0efa871100704e2d9be50630e69bec69" Guid="dc968c73-e3eb-42e8-94d9-e2c146a0ca96">
+            <File Id="FILE.operationBuffelDirectory.05.ger" KeyPath="yes"
+                  Source=".\OperationBüffel\05.ger" />
+        </Component>
+        <Component Id="c62a47212edc94fb880b476f5b0a75805" Guid="6a62abe3-c035-46c6-831a-f543b35c3252">
+            <File Id="FILE.operationBuffelDirectory.05.list" KeyPath="yes"
+                  Source=".\OperationBüffel\05.list" />
+        </Component>
+        <Component Id="ca74f4e0c4a2f4efbbcc38243e54bd9f0" Guid="593d1bac-9ca8-4cfd-ab53-6d6e35e8e7b4">
+            <File Id="FILE.operationBuffelDirectory.05.Mission" KeyPath="yes"
+                  Source=".\OperationBüffel\05.Mission" />
+        </Component>
+        <Component Id="ce0fa43421f0f41f7899ad923657077fa" Guid="cecf65ba-af24-4113-9fd7-32691f999867">
+            <File Id="FILE.operationBuffelDirectory.05.msnbin" KeyPath="yes"
+                  Source=".\OperationBüffel\05.msnbin" />
+        </Component>
+        <Component Id="c6a65009d4e1d48e89cbf23cb812a3949" Guid="95e10509-9a74-45c1-a403-0c3b06e39a7d">
+            <File Id="FILE.operationBuffelDirectory.05.png" KeyPath="yes"
+                  Source=".\OperationBüffel\05.png" />
+        </Component>
+        <Component Id="c63ab0130ee504d60aabe97b0e74bfa3a" Guid="fb7bab11-d90b-44ff-9434-3e22e489c9c2">
+            <File Id="FILE.operationBuffelDirectory.05.pol" KeyPath="yes"
+                  Source=".\OperationBüffel\05.pol" />
+        </Component>
+        <Component Id="c331b504e85784b51a7f70b7fd5fde580" Guid="64985a30-cda1-495a-affc-feb22501feae">
+            <File Id="FILE.operationBuffelDirectory.05.rus" KeyPath="yes"
+                  Source=".\OperationBüffel\05.rus" />
+        </Component>
+        <Component Id="ceaa8fbcd7d9d4650905d2bffa4623612" Guid="4f298ffe-0f1c-43c8-8387-21715c6c4cdf">
+            <File Id="FILE.operationBuffelDirectory.05.spa" KeyPath="yes"
+                  Source=".\OperationBüffel\05.spa" />
+        </Component>
+        <Component Id="c419907ad4ff34eb48a7412be09112b74" Guid="3aeb418d-5596-4784-a64b-c905dd97ae64">
+            <File Id="FILE.operationBuffelDirectory.campaign.png" KeyPath="yes"
+                  Source=".\OperationBüffel\campaign.png" />
+        </Component>
+        <Component Id="cf2325fb8ed52415484a35945efbfd1a4" Guid="dafb56cd-db37-4793-be59-4f1f3b4f041a">
+            <File Id="FILE.operationBuffelDirectory.data.ldf" KeyPath="yes"
+                  Source=".\OperationBüffel\data.ldf" />
+        </Component>
+        <Component Id="c84f95797dc8b44e7a1d5bd1ab5167070" Guid="b27cea84-367e-4157-a5fa-7e3af926ad9e">
+            <File Id="FILE.operationBuffelDirectory.data.ldfbin" KeyPath="yes"
+                  Source=".\OperationBüffel\data.ldfbin" />
+        </Component>
+        <Component Id="cc955dbd2a81a4a99865b7dd8ae1e559b" Guid="beb33843-f4cb-435b-9c3b-1e47b28eedb7">
+            <File Id="FILE.operationBuffelDirectory.info.locale_eng.txt" KeyPath="yes"
+                  Source=".\OperationBüffel\info.locale=eng.txt" />
+        </Component>
+        <Component Id="cef71f7ea3ec34b609f9dedf618ff6136" Guid="d9a306ac-bad9-49b3-a365-2794198a3911">
+            <File Id="FILE.operationBuffelDirectory.info.locale_fra.txt" KeyPath="yes"
+                  Source=".\OperationBüffel\info.locale=fra.txt" />
+        </Component>
+        <Component Id="ce77062b5f0724b1786393ee7b8364806" Guid="ff73ab7f-af5f-4177-8d2a-66197feee110">
+            <File Id="FILE.operationBuffelDirectory.info.locale_ger.txt" KeyPath="yes"
+                  Source=".\OperationBüffel\info.locale=ger.txt" />
+        </Component>
+        <Component Id="c9cc82dc937f246299217407b6a06165b" Guid="5c52b334-366e-4aec-b6e5-22c39c39b9b0">
+            <File Id="FILE.operationBuffelDirectory.info.locale_pol.txt" KeyPath="yes"
+                  Source=".\OperationBüffel\info.locale=pol.txt" />
+        </Component>
+        <Component Id="c480cf3a610bb4f169c7ad216078fecce" Guid="1d09ad6b-f4aa-425c-b987-052c17338437">
+            <File Id="FILE.operationBuffelDirectory.info.locale_rus.txt" KeyPath="yes"
+                  Source=".\OperationBüffel\info.locale=rus.txt" />
+        </Component>
+        <Component Id="c8f2967fd534346cbb2aa4f4c1ca1202c" Guid="924a54fe-cbb0-4fb1-8eba-cd6990fd73cf">
+            <File Id="FILE.operationBuffelDirectory.info.locale_spa.txt" KeyPath="yes"
+                  Source=".\OperationBüffel\info.locale=spa.txt" />
+        </Component>
+        <Component Id="c4ea3c0ca661e4699a39d94b9ddfb9e4f" Guid="c370d360-070d-4573-9f2f-ff20fac7a26a">
+            <File Id="FILE.operationBuffelDirectory.info.txt" KeyPath="yes"
+                  Source=".\OperationBüffel\info.txt" />
+        </Component>
+    </ComponentGroup>
+
+    <!--Features-->
+    <Feature Id="featureBuffel" Level="0">
+        <ComponentGroupRef Id="cgBuffel" />
+        <Condition Level="1"><![CDATA[FILEEXISTS]]></Condition>
+    </Feature>
+    </Product>
+</Wix>

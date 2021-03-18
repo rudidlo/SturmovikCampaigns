@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "Saldy's missions", "Saldy's Missions\Saldy's missions.wixproj", "{336F1F8C-4BD1-40CB-8ED1-12F1836FDD63}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{336F1F8C-4BD1-40CB-8ED1-12F1836FDD63}.Debug|x86.ActiveCfg = Debug|x86
+		{336F1F8C-4BD1-40CB-8ED1-12F1836FDD63}.Debug|x86.Build.0 = Debug|x86
+		{336F1F8C-4BD1-40CB-8ED1-12F1836FDD63}.Release|x86.ActiveCfg = Release|x86
+		{336F1F8C-4BD1-40CB-8ED1-12F1836FDD63}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {63E8B044-C618-427F-8278-67B387733EB1}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,11 @@
+﻿
+
+// ----------------------------------------------------------------
+// localized campaign name and description
+// ----------------------------------------------------------------
+
+
+&name="Operation Buffel"
+
+&description="Fly the Ju 52 during of special operations over Caucasus<br><br><u>Author</u><br>saldy<br><br><u>Version</u><br>1.2a<br><br><u>Flyable Aircraft</u><br>Ju 52/3M<br><br><u>Map</u><br>Kuban<br><br><u>Time Periode</u><br>October 1942 to november 1942<br><br><u>Number of Missions</u><br>5<br><br><u>Remarks</u><br><li>A mission is completed, when the player lands back at his home airfield.</li><li>Don't hide the entire HUD (h-key) when flying the missions, because this will also disable the messages you receive during the flight and the screens at the beginning and end of a mission.</li>"
+
