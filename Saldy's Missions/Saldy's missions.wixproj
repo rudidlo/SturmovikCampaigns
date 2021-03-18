@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" InitialTargets="EnsureWixToolsetInstalled" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>3.10</ProductVersion>
+    <ProjectGuid>336f1f8c-4bd1-40cb-8ed1-12f1836fdd63</ProjectGuid>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputName>Saldy%27s missions</OutputName>
+    <OutputType>Package</OutputType>
+    <Name>Saldy's missions</Name>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>Debug</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Product.wxs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="OperationBüffel" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="OperationBüffel\01.chs" />
+    <Content Include="OperationBüffel\01.eng" />
+    <Content Include="OperationBüffel\01.fra" />
+    <Content Include="OperationBüffel\01.ger" />
+    <Content Include="OperationBüffel\01.list" />
+    <Content Include="OperationBüffel\01.Mission" />
+    <Content Include="OperationBüffel\01.msnbin" />
+    <Content Include="OperationBüffel\01.png" />
+    <Content Include="OperationBüffel\01.pol" />
+    <Content Include="OperationBüffel\01.rus" />
+    <Content Include="OperationBüffel\01.spa" />
+    <Content Include="OperationBüffel\02.chs" />
+    <Content Include="OperationBüffel\02.eng" />
+    <Content Include="OperationBüffel\02.fra" />
+    <Content Include="OperationBüffel\02.ger" />
+    <Content Include="OperationBüffel\02.list" />
+    <Content Include="OperationBüffel\02.Mission" />
+    <Content Include="OperationBüffel\02.msnbin" />
+    <Content Include="OperationBüffel\02.png" />
+    <Content Include="OperationBüffel\02.pol" />
+    <Content Include="OperationBüffel\02.rus" />
+    <Content Include="OperationBüffel\02.spa" />
+    <Content Include="OperationBüffel\03.chs" />
+    <Content Include="OperationBüffel\03.eng" />
+    <Content Include="OperationBüffel\03.fra" />
+    <Content Include="OperationBüffel\03.ger" />
+    <Content Include="OperationBüffel\03.list" />
+    <Content Include="OperationBüffel\03.Mission" />
+    <Content Include="OperationBüffel\03.msnbin" />
+    <Content Include="OperationBüffel\03.png" />
+    <Content Include="OperationBüffel\03.pol" />
+    <Content Include="OperationBüffel\03.rus" />
+    <Content Include="OperationBüffel\03.spa" />
+    <Content Include="OperationBüffel\04.chs" />
+    <Content Include="OperationBüffel\04.eng" />
+    <Content Include="OperationBüffel\04.fra" />
+    <Content Include="OperationBüffel\04.ger" />
+    <Content Include="OperationBüffel\04.list" />
+    <Content Include="OperationBüffel\04.Mission" />
+    <Content Include="OperationBüffel\04.msnbin" />
+    <Content Include="OperationBüffel\04.png" />
+    <Content Include="OperationBüffel\04.pol" />
+    <Content Include="OperationBüffel\04.rus" />
+    <Content Include="OperationBüffel\04.spa" />
+    <Content Include="OperationBüffel\05.chs" />
+    <Content Include="OperationBüffel\05.eng" />
+    <Content Include="OperationBüffel\05.fra" />
+    <Content Include="OperationBüffel\05.ger" />
+    <Content Include="OperationBüffel\05.list" />
+    <Content Include="OperationBüffel\05.Mission" />
+    <Content Include="OperationBüffel\05.msnbin" />
+    <Content Include="OperationBüffel\05.png" />
+    <Content Include="OperationBüffel\05.pol" />
+    <Content Include="OperationBüffel\05.rus" />
+    <Content Include="OperationBüffel\05.spa" />
+    <Content Include="OperationBüffel\campaign.png" />
+    <Content Include="OperationBüffel\data.ldf" />
+    <Content Include="OperationBüffel\data.ldfbin" />
+    <Content Include="OperationBüffel\info.locale=eng.txt" />
+    <Content Include="OperationBüffel\info.locale=fra.txt" />
+    <Content Include="OperationBüffel\info.locale=ger.txt" />
+    <Content Include="OperationBüffel\info.locale=pol.txt" />
+    <Content Include="OperationBüffel\info.locale=rus.txt" />
+    <Content Include="OperationBüffel\info.locale=spa.txt" />
+    <Content Include="OperationBüffel\info.txt" />
+  </ItemGroup>
+  <Import Project="$(WixTargetsPath)" Condition=" '$(WixTargetsPath)' != '' " />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets" Condition=" '$(WixTargetsPath)' == '' AND Exists('$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets') " />
+  <Target Name="EnsureWixToolsetInstalled" Condition=" '$(WixTargetsImported)' != 'true' ">
+    <Error Text="The WiX Toolset v3.11 (or newer) build tools must be installed to build this project. To download the WiX Toolset, see http://wixtoolset.org/releases/" />
+  </Target>
+  <!--
+	To modify your build process, add your task inside one of the targets below and uncomment it.
+	Other similar extension points exist, see Wix.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>

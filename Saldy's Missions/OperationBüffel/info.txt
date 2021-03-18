@@ -1,0 +1,17 @@
+﻿
+
+// ----------------------------------------------------------------
+//         General campaign information
+// ----------------------------------------------------------------
+
+
+&order=1								// Position in the campaign list, campaign with lower order number will be placed first
+
+&free=1									// Set to 1 if the campaign is free
+&tows=3									// Required theatres of war divided by comma, i.e. &tows=3  (BoS = 1, BoM = 2, BoK = 3) (maps and planes from these TOWs are required to be available for account). 
+&planes=							// Required collector's planes divided by 
+
+&missionsAmount=5						// Amount of missions in the campaign
+
+&showFutureMissionsNames=1				// Show names of not yet available missions
+&showFutureMissionsDescriptions=0		// Show descriptions of not yet available missions
